@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0249ff;
+
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20%;
+    background-color: #60d2ffde;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+/* ver aqui dps */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+/* ver aqui dps */
+header h1{
+    font-size: 1.5rem;
+    color: #333;
+}
+/* ver aqui dps */
+header.Busca {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group{
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/*
+.buttons {
+    display: flex;
+}
+*/
+.questoes-table{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.questoes-table
+th, .questoes-table td{
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+
+}
+
+.questoes-table th {
+    background-color: #333;
+    color: #fff;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}

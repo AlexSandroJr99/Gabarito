@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de Gabaritos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Função para gerar questões com base na quantidade especificada
+        function gerarQuestoes() {
+            const tabela = document.querySelector(".questoes-table tbody");
+            const qtdQuestoes = parseInt(document.getElementById("qtd_questoes").value) || 0;
+
+             // Limitar a quantidade de questões entre 1 e 60
+            if (qtdQuestoes < 1) {
+                qtdQuestoes = 1;
+                document.getElementById("qtd_questoes").value = 1;
+            } else if (qtdQuestoes > 60) {
+                qtdQuestoes = 60;
+                document.getElementById("qtd_questoes").value = 60;
+            }
+
+            // Limpa a tabela antes de adicionar novas questões
+            tabela.innerHTML = "";
+
+            // Adiciona as linhas de questões de acordo com a quantidade especificada
+            for (let i = 1; i <= qtdQuestoes; i++) {
+                const novaLinha = document.createElement("tr");
+                novaLinha.innerHTML = `
+                    <td><input type="checkbox"></td>
+                    <td>${i}</td>
+                    <td>
+                        <select>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select>
+                            <option>Fundamentos da Computação</option>
+                            <option>Banco de Dados</option>
+                            <option>Engenharia de Software</option>
+                        </select>
+                    </td>
+                `;
+                tabela.appendChild(novaLinha);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GABARITOS</h1>
+            <input type="text" placeholder="Busca Rápida" class="busca" aria-label="Busca Rápida">
+        </header>
+        
+        <form>
+            <div class="form-group">
+                <label for="gabarito">Gabarito</label>
+                <input type="number" id="gabarito" name="gabarito" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="semestre">Semestre</label>
+                <select id="semestre" name="semestre"> 
+                    <option>2024.2</option>
+                    <option>2025.1</option>
+                    <option>2025.2</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso">
+                    <option>Sistemas de Informação</option>
+                    <option>Enfermagem</option>
+                    <option>Direito</option>
+                    <option>Fisioterapia</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="turno">Turno</label>
+                <select id="turno" name="turno">
+                    <option>Matutino</option>
+                    <option>Vespertino</option>
+                    <option>Noturno</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="periodo">Período</label>
+                <input type="number" id="periodo" name="periodo" value="1">
+            </div>
+            
+            <div class="form-group">
+                <label for="qtd_questoes">Qtd de Questões</label>
+                <!-- Chamando a função gerarQuestoes() sempre que o valor for modificado -->
+                <input type="number" id="qtd_questoes" name="qtd_questoes" value="1" min="1" max="60" oninput="gerarQuestoes()">
+            </div>
+        </form>
+
+        <section class="questoes">
+            <h2>Questões</h2>
+            <input type="text" placeholder="Busca Rápida" class="busca" aria-label="Busca de Questões">
+            <table class="questoes-table">
+                <thead>
+                    <tr>
+                        <th>Selecionar</th>
+                        <th>Questão</th>
+                        <th>Resposta certa</th>
+                        <th>Disciplina</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas das questões serão adicionadas aqui dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+        <div class="form-group"> <button type="submit"> Enviar </button> </div>
+    </div>
+</body>
+</html>
