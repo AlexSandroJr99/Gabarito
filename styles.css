@@ -20,19 +20,19 @@ body {
     border-radius: 50px;
     box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
-/* ver aqui dps */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-/* ver aqui dps */
+
 header h1{
     font-size: 1.5rem;
     color: #333;
 }
-/* ver aqui dps */
+
 header.Busca {
     padding: 5px;
     border-radius: 4px;
@@ -63,11 +63,7 @@ form{
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-/*
-.buttons {
-    display: flex;
-}
-*/
+
 .questoes-table{
     width: 100%;
     border-collapse: collapse;
